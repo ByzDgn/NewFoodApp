@@ -1,0 +1,248 @@
+{
+    "sebze": [
+      {
+        "isim": "Fırında Kabak Mücver",
+        "malzemeler": [
+          "2 adet kabak",
+          "1 adet yumurta",
+          "1 çay bardağı un",
+          "1 çay bardağı kaşar rendesi",
+          "Tuz",
+          "Karabiber"
+        ],
+        "yapilis": [
+          "Kabakları rendeleyip suyunu sıkın.",
+          "Yumurtayı çırpıp kabaklarla karıştırın.",
+          "Un, kaşar rendesi, tuz ve karabiber ekleyin.",
+          "Karışımı yağlı kağıt serili tepsiye yayın.",
+          "200 derece fırında 20 dakika pişirin."
+        ],
+        "sure": "30 dakika",
+        "servis": "4 kişilik",
+        "kalori": "150 kcal",
+        "gorsel": "assets/images/firinda_kabak_mucver.jpg"
+      },
+      {
+        "isim": "Zeytinyağlı Taze Fasulye",
+        "malzemeler": [
+          "500 gr taze fasulye",
+          "2 adet domates",
+          "1 adet kuru soğan",
+          "Yarım çay bardağı zeytinyağı",
+          "1 tatlı kaşığı şeker",
+          "Tuz"
+        ],
+        "yapilis": [
+          "Fasulyeleri temizleyip doğrayın.",
+          "Soğanı yemeklik doğrayıp zeytinyağında kavurun.",
+          "Doğranmış domatesleri ekleyip pişirin.",
+          "Fasulyeleri, şeker ve tuzu ekleyip karıştırın.",
+          "Üzerine sıcak su ekleyip kısık ateşte pişirin."
+        ],
+        "sure": "40 dakika",
+        "servis": "4 kişilik",
+        "kalori": "120 kcal",
+        "gorsel": "assets/images/zeytinyagli_taze_fasulye.jpg"
+      }
+    ],
+    "et": [
+      {
+        "isim": "Izgara Köfte",
+        "malzemeler": [
+          "500 gr kıyma",
+          "1 adet kuru soğan",
+          "1 dilim bayat ekmek içi",
+          "1 çay kaşığı kimyon",
+          "Tuz",
+          "Karabiber"
+        ],
+        "yapilis": [
+          "Soğanı rendeleyin ve suyunu sıkın.",
+          "Kıyma, ekmek içi, baharatlar ve soğanı karıştırın.",
+          "Karışımdan ceviz büyüklüğünde parçalar koparıp şekil verin.",
+          "Köfteleri ızgarada pişirin."
+        ],
+        "sure": "25 dakika",
+        "servis": "4 kişilik",
+        "kalori": "250 kcal",
+        "gorsel": "assets/images/izgara_kofte.jpg"
+      },
+      {
+        "isim": "Etli Kuru Fasulye",
+        "malzemeler": [
+          "500 gr kuru fasulye",
+          "200 gr kuşbaşı et",
+          "1 adet kuru soğan",
+          "1 yemek kaşığı domates salçası",
+          "Tuz",
+          "Karabiber"
+        ],
+        "yapilis": [
+          "Fasulyeleri bir gece önceden suda bekletin.",
+          "Eti tencerede kavurun.",
+          "Soğanı doğrayıp ekleyin ve kavurmaya devam edin.",
+          "Salçayı ekleyip karıştırın.",
+          "Fasulyeleri ve sıcak suyu ekleyip pişirin."
+        ],
+        "sure": "60 dakika",
+        "servis": "6 kişilik",
+        "kalori": "300 kcal",
+        "gorsel": "assets/images/etli_kuru_fasulye.jpg"
+      },
+      {
+        "isim": "Tavuk Şiş",
+        "malzemeler": [
+          "500 gr tavuk göğsü",
+          "1 çay bardağı yoğurt",
+          "1 yemek kaşığı salça",
+          "2 diş sarımsak",
+          "Tuz",
+          "Karabiber",
+          "Pul biber"
+        ],
+        "yapilis": [
+          "Tavukları kuşbaşı doğrayın.",
+          "Yoğurt, salça, ezilmiş sarımsak ve baharatlarla marine edin.",
+          "Tavukları şişlere dizin.",
+          "Izgarada veya fırında pişirin."
+        ],
+        "sure": "40 dakika",
+        "servis": "4 kişilik",
+        "kalori": "220 kcal",
+        "gorsel": "assets/images/tavuk_sis.jpg"
+      },
+      {
+        "isim": "Dana Güveç",
+        "malzemeler": [
+          "500 gr dana eti",
+          "1 adet kuru soğan",
+          "2 adet domates",
+          "2 adet patates",
+          "1 yemek kaşığı salça",
+          "Tuz",
+          "Karabiber",
+          "Sıvı yağ"
+        ],
+        "yapilis": [
+          "Eti tencereye alıp kavurun.",
+          "Soğan, domates ve salçayı ekleyip kavurmaya devam edin.",
+          "Patatesleri ekleyip karıştırın.",
+          "Sıcak su ekleyip etler yumuşayana kadar pişirin."
+        ],
+        "sure": "1 saat",
+        "servis": "4 kişilik",
+        "kalori": "350 kcal",
+        "gorsel": "assets/images/dana_guvec.jpg"
+      },
+      {
+        "isim": "Fırında Tavuk Kanat",
+        "malzemeler": [
+          "1 kg tavuk kanat",
+          "2 yemek kaşığı yoğurt",
+          "1 yemek kaşığı salça",
+          "2 diş sarımsak",
+          "Tuz",
+          "Karabiber",
+          "Pul biber"
+        ],
+        "yapilis": [
+          "Yoğurt, salça, ezilmiş sarımsak ve baharatları karıştırın.",
+          "Tavuk kanatlarını bu karışımda marine edin.",
+          "Önceden ısıtılmış 200 derece fırında pişirin."
+        ],
+        "sure": "45 dakika",
+        "servis": "4 kişilik",
+        "kalori": "300 kcal",
+        "gorsel": "assets/images/firinda_tavuk_kanat.jpg"
+      },
+      {
+        "isim": "Kuzu İncik",
+        "malzemeler": [
+          "4 adet kuzu incik",
+          "1 adet kuru soğan",
+          "2 diş sarımsak",
+          "1 yemek kaşığı salça",
+          "Tuz",
+          "Karabiber",
+          "Pul biber",
+          "Sıvı yağ"
+        ],
+        "yapilis": [
+          "Kuzu incikleri sıvı yağda mühürleyin.",
+          "Soğan, sarımsak ve salçayı ekleyip kavurun.",
+          "Baharatları ve sıcak suyu ekleyip kısık ateşte pişirin."
+        ],
+        "sure": "1.5 saat",
+        "servis": "4 kişilik",
+        "kalori": "400 kcal",
+        "gorsel": "assets/images/kuzu_incik.jpg"
+      }
+    ],
+    "vegan": [
+      {
+        "isim": "Nohutlu Sebze Kavurma",
+        "malzemeler": [
+          "2 su bardağı haşlanmış nohut",
+          "1 adet kabak",
+          "1 adet kırmızı biber",
+          "1 adet havuç",
+          "2 yemek kaşığı zeytinyağı",
+          "Tuz",
+          "Karabiber"
+        ],
+        "yapilis": [
+          "Sebzeleri jülyen doğrayın ve zeytinyağında soteleyin.",
+          "Haşlanmış nohudu ekleyip karıştırın.",
+          "Tuz ve karabiberle tatlandırarak servis edin."
+        ],
+        "sure": "30 dakika",
+        "servis": "4 kişilik",
+        "kalori": "250 kcal",
+        "gorsel": "assets/images/nohutlu_sebze.jpg"
+      }
+    ],
+    "tatli": [
+      {
+        "isim": "Çikolatalı Kek",
+        "malzemeler": [
+          "2 su bardağı un",
+          "1 su bardağı toz şeker",
+          "1 su bardağı süt",
+          "2 yemek kaşığı kakao",
+          "1 paket kabartma tozu",
+          "1 çay bardağı sıvı yağ",
+          "2 adet yumurta"
+        ],
+        "yapilis": [
+          "Yumurta ve şekeri çırpın.",
+          "Süt ve yağı ekleyin.",
+          "Un, kakao ve kabartma tozunu ekleyip karıştırın.",
+          "170 derece fırında 35 dakika pişirin."
+        ],
+        "sure": "50 dakika",
+        "servis": "8 kişilik",
+        "kalori": "300 kcal",
+        "gorsel": "assets/images/cikolatali_kek.jpg"
+      }
+    ],
+    "icecek": [
+      {
+        "isim": "Meyveli Smoothie",
+        "malzemeler": [
+          "1 adet muz",
+          "1 su bardağı çilek",
+          "1 su bardağı süt",
+          "1 yemek kaşığı bal"
+        ],
+        "yapilis": [
+          "Tüm malzemeleri blenderdan geçirin.",
+          "Bardağa doldurup servis edin."
+        ],
+        "sure": "10 dakika",
+        "servis": "2 kişilik",
+        "kalori": "200 kcal",
+        "gorsel": "assets/images/meyveli_smoothie.jpg"
+      }
+    ]
+  }
+  
