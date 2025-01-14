@@ -9,8 +9,19 @@ class RecipeListScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Yemek Tarifleri'),
-        backgroundColor: const Color(0xFF004D79),
+        title: const Text(
+          'Yemek Tarifleri',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+        ),
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFF66BB6A), Color(0xFF1E88E5)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: FutureBuilder<List<dynamic>>(
         future: ApiService.fetchRecipes(), // API'den tarifleri çekiyoruz
@@ -20,7 +31,12 @@ class RecipeListScreen extends StatelessWidget {
           } else if (snapshot.hasError) {
             return Center(child: Text('Hata: ${snapshot.error}'));
           } else if (!snapshot.hasData || snapshot.data!.isEmpty) {
-            return const Center(child: Text('Hiç tarif bulunamadı.'));
+            return const Center(
+              child: Text(
+                'Hiç tarif bulunamadı.',
+                style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+              ),
+            );
           }
 
           final recipes = snapshot.data!;
@@ -29,22 +45,44 @@ class RecipeListScreen extends StatelessWidget {
             itemBuilder: (context, index) {
               final recipe = recipes[index];
               return Card(
+                elevation: 4,
                 margin: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(10),
+                  borderRadius: BorderRadius.circular(12),
                 ),
                 child: ListTile(
-                  leading: recipe['image'] != null
-                      ? Image.network(
-                          recipe['image'],
-                          width: 50,
-                          height: 50,
-                          fit: BoxFit.cover,
-                        )
-                      : const Icon(Icons.fastfood),
-                  title: Text(recipe['title']),
+                  contentPadding: const EdgeInsets.all(8),
+                  leading: ClipRRect(
+                    borderRadius: BorderRadius.circular(8),
+                    child: recipe['image'] != null
+                        ? Image.network(
+                            recipe['image'],
+                            width: 60,
+                            height: 60,
+                            fit: BoxFit.cover,
+                          )
+                        : const Icon(
+                            Icons.fastfood,
+                            size: 40,
+                            color: Colors.grey,
+                          ),
+                  ),
+                  title: Text(
+                    recipe['title'],
+                    style: const TextStyle(
+                      fontWeight: FontWeight.bold,
+                      fontSize: 16,
+                    ),
+                  ),
                   subtitle: Text(
-                      'Hazırlama süresi: ${recipe['readyInMinutes']} dk'),
+                    'Hazırlama süresi: ${recipe['readyInMinutes']} dk',
+                    style: const TextStyle(fontSize: 14, color: Colors.grey),
+                  ),
+                  trailing: const Icon(
+                    Icons.arrow_forward_ios,
+                    size: 18,
+                    color: Colors.grey,
+                  ),
                   onTap: () {
                     Navigator.push(
                       context,

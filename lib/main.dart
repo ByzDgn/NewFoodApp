@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'screens/splash_screen.dart';  // SplashScreen'ı import ettik
+import 'screens/splash_screen.dart';  
 
 
 void main() {
@@ -12,13 +12,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,  // Debug banner'ını kaldırır
+      debugShowCheckedModeBanner: false,  
       title: 'FoodApp',
       theme: ThemeData(
-        primarySwatch: Colors.teal,  // Ana renk
+        primarySwatch: Colors.teal,  
         visualDensity: VisualDensity.adaptivePlatformDensity,
       ),
-      home: const SplashScreen(),  // İlk ekran olarak SplashScreen'i başlatıyoruz
+      home: const SplashScreen(),  
     );
   }
 }

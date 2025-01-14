@@ -36,8 +36,20 @@ class _MealPlanFilterScreenState extends State<MealPlanFilterScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text('Filtrele ve Planla'),
-        backgroundColor: Colors.orange.shade700,
+        title: const Text(
+          'Filtrele ve Planla',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+        ),
+        centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -45,75 +57,39 @@ class _MealPlanFilterScreenState extends State<MealPlanFilterScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
-              Card(
-                elevation: 4,
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Diyet Seçimi',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 10),
-                      DropdownButton<String>(
-                        value: selectedDiet,
-                        hint: const Text('Bir diyet seçin'),
-                        items: diets.map((diet) {
-                          return DropdownMenuItem(
-                            value: diet.toLowerCase(),
-                            child: Text(diet),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedDiet = value;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+              // Diyet Seçimi Kartı
+              _buildFilterCard(
+                title: 'Diyet Seçimi',
+                hintText: 'Bir diyet seçin',
+                items: diets,
+                value: selectedDiet,
+                onChanged: (value) {
+                  setState(() {
+                    selectedDiet = value;
+                  });
+                },
               ),
-              Card(
-                elevation: 4,
-                margin: const EdgeInsets.symmetric(vertical: 10),
-                child: Padding(
-                  padding: const EdgeInsets.all(16.0),
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      const Text(
-                        'Kısıtlamalar',
-                        style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
-                      ),
-                      const SizedBox(height: 10),
-                      DropdownButton<String>(
-                        value: selectedIntolerance,
-                        hint: const Text('Bir kısıtlama seçin'),
-                        items: intolerances.map((intolerance) {
-                          return DropdownMenuItem(
-                            value: intolerance.toLowerCase(),
-                            child: Text(intolerance),
-                          );
-                        }).toList(),
-                        onChanged: (value) {
-                          setState(() {
-                            selectedIntolerance = value;
-                          });
-                        },
-                      ),
-                    ],
-                  ),
-                ),
+              const SizedBox(height: 16),
+
+              // Kısıtlamalar Kartı
+              _buildFilterCard(
+                title: 'Kısıtlamalar',
+                hintText: 'Bir kısıtlama seçin',
+                items: intolerances,
+                value: selectedIntolerance,
+                onChanged: (value) {
+                  setState(() {
+                    selectedIntolerance = value;
+                  });
+                },
               ),
-              const SizedBox(height: 20),
+              const SizedBox(height: 30),
+
+              // Plan Oluştur Butonu
               ElevatedButton(
                 style: ElevatedButton.styleFrom(
-                  padding: const EdgeInsets.symmetric(vertical: 16),
-                  backgroundColor: Colors.orange.shade700,
+                  padding: const EdgeInsets.symmetric(vertical: 18),
+                  backgroundColor: const Color(0xFFFF7043),
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
@@ -131,11 +107,58 @@ class _MealPlanFilterScreenState extends State<MealPlanFilterScreen> {
                 },
                 child: const Text(
                   'Plan Oluştur',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
               ),
             ],
           ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildFilterCard({
+    required String title,
+    required String hintText,
+    required List<String> items,
+    required String? value,
+    required ValueChanged<String?> onChanged,
+  }) {
+    return Card(
+      shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+      elevation: 5,
+      shadowColor: Colors.grey.shade300,
+      child: Padding(
+        padding: const EdgeInsets.all(16.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(
+              title,
+              style: const TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Color(0xFF424242),
+              ),
+            ),
+            const SizedBox(height: 10),
+            DropdownButton<String>(
+              value: value,
+              hint: Text(hintText),
+              isExpanded: true,
+              items: items.map((item) {
+                return DropdownMenuItem(
+                  value: item.toLowerCase(),
+                  child: Text(item),
+                );
+              }).toList(),
+              onChanged: onChanged,
+            ),
+          ],
         ),
       ),
     );

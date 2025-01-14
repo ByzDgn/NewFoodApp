@@ -35,7 +35,7 @@ class _IngredientSearchScreenState extends State<IngredientSearchScreen> {
     final String url =
         'https://api.spoonacular.com/recipes/findByIngredients?ingredients=$ingredients&number=10&apiKey=$_apiKey';
 
-    print('API URL: $url'); // URL'yi konsola yazdır
+    print('API URL: $url'); 
 
     try {
       final response = await http.get(Uri.parse(url));

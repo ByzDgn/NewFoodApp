@@ -11,10 +11,18 @@ class MealPlanScreen extends StatelessWidget {
       appBar: AppBar(
         title: const Text(
           'Yemek Planı Detayları',
-          style: TextStyle(fontWeight: FontWeight.bold),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
         ),
-        backgroundColor: Colors.orange.shade700,
         centerTitle: true,
+        flexibleSpace: Container(
+          decoration: const BoxDecoration(
+            gradient: LinearGradient(
+              colors: [Color(0xFFFFA726), Color(0xFFFF7043)],
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+            ),
+          ),
+        ),
       ),
       body: weekData.isNotEmpty
           ? ListView(
@@ -27,15 +35,18 @@ class MealPlanScreen extends StatelessWidget {
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(15),
                   ),
-                  elevation: 4,
+                  elevation: 5,
                   child: ExpansionTile(
+                    tilePadding: const EdgeInsets.symmetric(horizontal: 16),
                     title: Text(
                       day.toUpperCase(),
                       style: const TextStyle(
                         fontWeight: FontWeight.bold,
                         fontSize: 18,
+                        color: Color(0xFFFF7043),
                       ),
                     ),
+                    iconColor: const Color(0xFFFF7043),
                     children: [
                       ...meals.map((meal) {
                         return ListTile(
@@ -44,18 +55,22 @@ class MealPlanScreen extends StatelessWidget {
                                   borderRadius: BorderRadius.circular(8),
                                   child: Image.network(
                                     'https://spoonacular.com/recipeImages/${meal['id']}-556x370.${meal['imageType']}',
-                                    width: 50,
-                                    height: 50,
+                                    width: 60,
+                                    height: 60,
                                     fit: BoxFit.cover,
                                   ),
                                 )
                               : const Icon(
                                   Icons.fastfood,
+                                  size: 40,
                                   color: Colors.orange,
                                 ),
                           title: Text(
                             meal['title'] ?? 'Başlık Yok',
-                            style: const TextStyle(fontWeight: FontWeight.bold),
+                            style: const TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 16,
+                            ),
                           ),
                           subtitle: Text(
                             'Hazırlama Süresi: ${meal['readyInMinutes']} dk\nServis: ${meal['servings'] ?? 'Bilinmiyor'}',
@@ -68,17 +83,25 @@ class MealPlanScreen extends StatelessWidget {
                         padding: const EdgeInsets.all(16.0),
                         child: Container(
                           decoration: BoxDecoration(
-                            color: Colors.orange.shade100,
+                            gradient: const LinearGradient(
+                              colors: [Color(0xFFFFE0B2), Color(0xFFFFCC80)],
+                              begin: Alignment.topLeft,
+                              end: Alignment.bottomRight,
+                            ),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           padding: const EdgeInsets.all(12.0),
                           child: Text(
                             'Günlük Besin Değerleri:\n'
-                            'Kalori: ${nutrients['calories']} kcal\n'
-                            'Protein: ${nutrients['protein']} g\n'
-                            'Yağ: ${nutrients['fat']} g\n'
-                            'Karbonhidrat: ${nutrients['carbohydrates']} g',
-                            style: const TextStyle(fontSize: 14),
+                            '🌟 Kalori: ${nutrients['calories']} kcal\n'
+                            '💪 Protein: ${nutrients['protein']} g\n'
+                            '🍳 Yağ: ${nutrients['fat']} g\n'
+                            '🍞 Karbonhidrat: ${nutrients['carbohydrates']} g',
+                            style: const TextStyle(
+                              fontSize: 14,
+                              fontWeight: FontWeight.w500,
+                              color: Colors.black87,
+                            ),
                           ),
                         ),
                       ),
