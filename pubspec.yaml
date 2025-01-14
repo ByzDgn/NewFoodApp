@@ -29,4 +29,5 @@ flutter:
   assets:
     - assets/recipes.json
     - assets/images/background.png
+    - assets/images/background2.png
     - assets/animations/animation.json

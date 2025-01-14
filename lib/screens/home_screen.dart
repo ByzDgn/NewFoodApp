@@ -13,44 +13,57 @@ class HomeScreen extends StatelessWidget {
         width: MediaQuery.of(context).size.width,
         height: MediaQuery.of(context).size.height,
         decoration: const BoxDecoration(
-          gradient: LinearGradient(
-            colors: [Color(0xFFE3F2FD), Color(0xFF64B5F6)],
-            begin: Alignment.topCenter,
-            end: Alignment.bottomCenter,
+          image: DecorationImage(
+            image: AssetImage('assets/images/background.png'),
+            fit: BoxFit.cover,
           ),
         ),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            // Başlık ve logo alanı
-            const Column(
-              children: [
-                Text(
-                  '🍴 Yemek Tarifleri\nUygulaması',
-                  style: TextStyle(
-                    fontSize: 26,
-                    fontWeight: FontWeight.w700,
-                    color: Colors.black87,
-                    letterSpacing: 1.2,
+            // Başlık alanı
+            Container(
+              padding: const EdgeInsets.all(16),
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.9),
+                borderRadius: BorderRadius.circular(16),
+                boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.1),
+                    blurRadius: 10,
+                    spreadRadius: 2,
+                    offset: const Offset(0, 4),
                   ),
-                  textAlign: TextAlign.center,
+                ],
+              ),
+              child: const Text(
+                '🍴 Yemek Tarifleri\nUygulaması',
+                style: TextStyle(
+                  fontSize: 28,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.black87,
+                  letterSpacing: 1.5,
+                  shadows: [
+                    Shadow(
+                      color: Colors.black26,
+                      offset: Offset(1, 1),
+                      blurRadius: 2,
+                    ),
+                  ],
                 ),
-              ],
+                textAlign: TextAlign.center,
+              ),
             ),
 
             // Butonlar
             Column(
               children: [
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFFFF7043),
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    elevation: 5,
-                  ),
+                _buildButton(
+                  context: context,
+                  color: const Color(0xFFFF7043),
+                  icon: Icons.restaurant_menu,
+                  label: 'Yemek Tarifleri',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -59,26 +72,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.restaurant_menu, color: Colors.white),
-                  label: const Text(
-                    'Yemek Tariflerini Görüntüle',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF42A5F5),
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    elevation: 5,
-                  ),
+                _buildButton(
+                  context: context,
+                  color: const Color(0xFF42A5F5),
+                  icon: Icons.filter_alt_outlined,
+                  label: 'Haftalık Yemek Planı Oluştur',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -87,26 +87,13 @@ class HomeScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.filter_alt_outlined, color: Colors.white),
-                  label: const Text(
-                    'Haftalık Yemek Planı Oluştur',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
                 const SizedBox(height: 20),
-                ElevatedButton.icon(
-                  style: ElevatedButton.styleFrom(
-                    backgroundColor: const Color(0xFF66BB6A),
-                    padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
-                    shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(12),
-                    ),
-                    elevation: 5,
-                  ),
+                _buildButton(
+                  context: context,
+                  color: const Color(0xFF66BB6A),
+                  icon: Icons.search,
+                  label: 'Malzeme ile Tarif Bul',
                   onPressed: () {
                     Navigator.push(
                       context,
@@ -115,31 +102,57 @@ class HomeScreen extends StatelessWidget {
                       ),
                     );
                   },
-                  icon: const Icon(Icons.search, color: Colors.white),
-                  label: const Text(
-                    'Malzeme ile Tarif Bul',
-                    style: TextStyle(
-                      fontSize: 16,
-                      fontWeight: FontWeight.bold,
-                      color: Colors.white,
-                    ),
-                  ),
                 ),
               ],
             ),
 
             // Alt Bilgi
-            const Padding(
-              padding: EdgeInsets.only(bottom: 16.0),
-              child: Text(
+            Container(
+              padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+              decoration: BoxDecoration(
+                color: Colors.black.withOpacity(0.6),
+                borderRadius: BorderRadius.circular(12),
+              ),
+              child: const Text(
                 '© 2025 Yemek Tarifleri Uygulaması',
                 style: TextStyle(
                   fontSize: 12,
-                  color: Colors.black54,
+                  color: Colors.white,
+                  fontStyle: FontStyle.italic,
                 ),
               ),
             ),
           ],
+        ),
+      ),
+    );
+  }
+
+  Widget _buildButton({
+    required BuildContext context,
+    required Color color,
+    required IconData icon,
+    required String label,
+    required VoidCallback onPressed,
+  }) {
+    return ElevatedButton.icon(
+      style: ElevatedButton.styleFrom(
+        backgroundColor: color,
+        padding: const EdgeInsets.symmetric(vertical: 16, horizontal: 30),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(16),
+        ),
+        elevation: 5,
+        shadowColor: Colors.black26,
+      ),
+      onPressed: onPressed,
+      icon: Icon(icon, color: Colors.white),
+      label: Text(
+        label,
+        style: const TextStyle(
+          fontSize: 16,
+          fontWeight: FontWeight.bold,
+          color: Colors.white,
         ),
       ),
     );

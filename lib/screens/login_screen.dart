@@ -31,7 +31,7 @@ class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: const Color(0xFF0084A8), // Arka plan rengini güncelledik
+      backgroundColor: const Color.fromARGB(255, 119, 208, 168), // Arka plan rengini güncelledik
       body: Center(
         child: SingleChildScrollView(
           child: Padding(
