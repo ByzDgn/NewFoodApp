@@ -27,3 +27,4 @@ samples, guidance on mobile development, and a full API reference.
 >>>>>>> 984279c (İlk commit)
 
 >>>>>>> 615e1a3 (Projenin en son hali)
+# newfood
